@@ -12,7 +12,7 @@ def clean_doc(text):
     # delete apostophes
     text = text.replace("'", "")
     #make text lower case
-    text.lower()
+    text = text.lower()
     #Replacing lyrical tags
     text = text.replace("[chorus]", "")
     text = text.replace("[chorus 2]", "")
@@ -26,6 +26,10 @@ def clean_doc(text):
     text = text.replace("[brige 2]", "")
     text = text.replace("[brige 3]", "")
     text = text.replace("[brige 4]", "")
+    text = text.replace("(","")
+    text = text.replace(")","")
+    text = text.replace("[","")
+    text = text.replace("]","")
 
     #seperate by whitespace
     words = text.split()
@@ -38,6 +42,7 @@ input_file =  'g=drakeLyrics.txt'
 
 text = load_doc(input_file)
 tokens = clean_doc(text)
+
 
 # organize into sequences of tokens
 length = 8 + 1
