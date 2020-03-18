@@ -1,9 +1,12 @@
 import string
 
-def clean_doc(doc):
+def load_doc(doc):
     #open file and convert to text
     file = open(doc, 'r')
     text = file.read()
+    return text
+
+def clean_doc(text):
     # replace '--' with a space ' '
     text = text.replace("-", " ")
     # delete apostophes
@@ -33,7 +36,9 @@ def clean_doc(doc):
 
 input_file =  'g=drakeLyrics.txt'
 
-tokens = clean_doc(input_file)
+text = load_doc(input_file)
+tokens = clean_doc(text)
+
 # organize into sequences of tokens
 length = 8 + 1
 sequences = list()
