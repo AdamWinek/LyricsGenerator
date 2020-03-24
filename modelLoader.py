@@ -40,8 +40,8 @@ model = load_model('model.h5')
 tokenizer = load(open('tokenizer.pkl', 'rb'))
 
 #seed text
-seed_text = "i really tested positive for missing the homies"
-#seed_text = lines[randint(0,len(lines))]
+#seed_text = "shit man my house is full of shit"
+seed_text = lines[randint(0,len(lines))]
 print(seed_text + '\n')
 
 # generate new text
