@@ -38,7 +38,7 @@ def clean_doc(text):
     stripped = [w.translate(table) for w in words]
     return stripped
 
-input_file =  'LyricsGeneratorFlask/static/LyricsGenerator_pkg/g=drakeLyrics.txt'
+input_file =  'LyricsGeneratorFlask/home/g=drakeLyrics.txt'
 
 text = load_doc(input_file)
 tokens = clean_doc(text)
@@ -57,7 +57,7 @@ for i in range(length, len(tokens)):
 print('Total Sequences: %d' % len(sequences))
 
 # save sequences to file
-out_filename = 'LyricsGeneratorFlask/static/LyricsGenerator_pkg/lyrics_sequences.txt'
+out_filename = 'LyricsGeneratorFlask/home/lyrics_sequences.txt'
 data = '\n'.join(sequences)
 file = open(out_filename, 'w')
 file.write(data)

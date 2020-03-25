@@ -1,12 +1,7 @@
-import sys
 
 from flask import Blueprint, jsonify, make_response, render_template
 
-import LyricsGenerator_pkg.modelLoader.getJsonFile
-
-sys.path.append("LyricsGeneratorFlask")
-sys.path.append("LyricsGeneratorFlask/LyricsGenerator_pkg")
-
+from home.modelLoader import getJsonFile
 
 home_view = Blueprint('home_view',__name__)
 @home_view.route('/')  # Route for the page

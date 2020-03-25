@@ -35,16 +35,16 @@ def generate_seq(model, tokenizer, seq_length, seed_text, n_words):
 
 
 def getJsonFile():
-	in_file = "LyricsGeneratorFlask/LyricsGenerator_pkg/lyrics_sequences.txt"
+	in_file = "LyricsGeneratorFlask/home/lyrics_sequences.txt"
 	doc = load_doc(in_file)
 	lines = doc.split('\n')
 
 	seq_length = len(lines[0].split()) - 1
 
 	#load model 
-	model = load_model('LyricsGeneratorFlask/LyricsGenerator_pkg/model.h5')
+	model = load_model('LyricsGeneratorFlask/home/model.h5')
 	# load the tokenizer
-	tokenizer = load(open('LyricsGeneratorFlask/LyricsGenerator_pkg/tokenizer.pkl', 'rb'))
+	tokenizer = load(open('LyricsGeneratorFlask/home/tokenizer.pkl', 'rb'))
 
 	#seed text
 	#seed_text = "shit man my house is full of shit"

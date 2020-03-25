@@ -8,7 +8,7 @@ from keras.layers import Dense
 from keras.layers import LSTM
 from keras.layers import Embedding
 
-in_file = "LyricsGeneratorFlask/static/LyricsGenerator_pkg/lyrics_sequences.txt"
+in_file = "LyricsGeneratorFlask/home/lyrics_sequences.txt"
 
 text = load_doc(in_file)
 #split the sequences up line by line
@@ -57,6 +57,6 @@ model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accur
 model.fit(X, y, batch_size=60, epochs=100)
 
 # save the model to file
-model.save('LyricsGeneratorFlask/static/LyricsGenerator_pkg/model.h5')
+model.save('LyricsGeneratorFlask/home/model.h5')
 # save the tokenizer
-dump(tokenizer, open('LyricsGeneratorFlask/static/LyricsGenerator_pkg/tokenizer.pkl', 'wb'))
+dump(tokenizer, open('LyricsGeneratorFlask/home/tokenizer.pkl', 'wb'))

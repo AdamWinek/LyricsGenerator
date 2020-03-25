@@ -5,7 +5,7 @@ import urllib.request
 sourcePage = "https://www.metrolyrics.com/drake-alpage-"
 sourcePageEnding = ".html"
 pages = 7
-exportfile = open("LyricsGeneratorFlask/static/LyricsGenerator_pkg/g=drakeLyrics.txt","w+")
+exportfile = open("LyricsGeneratorFlask/home/g=drakeLyrics.txt","w+")
 
 
 
