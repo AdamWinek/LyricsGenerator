@@ -47,8 +47,8 @@ def getJsonFile():
 	tokenizer = load(open('LyricsGeneratorFlask/home/tokenizer.pkl', 'rb'))
 
 	#seed text
-	#seed_text = "shit man my house is full of shit"
-	seed_text = lines[randint(0,len(lines))]
+	seed_text = "I dont like my math teacher he sucks ass"
+	#seed_text = lines[randint(0,len(lines))]
 	print(seed_text + '\n')
 
 	# generate new text

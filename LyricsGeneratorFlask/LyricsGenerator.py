@@ -2,6 +2,8 @@ from flask import Flask
 from home.views import home_view
 from home.modelLoader import getJsonFile
 
+
+
 def create_app(config_file):
 	app = Flask(__name__)  # Create application object
 	app.config.from_pyfile(config_file)  # Configure application with settings file, not strictly necessary

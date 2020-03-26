@@ -12,6 +12,7 @@ def display_home_page():
 def generate():	
 	jsonText = getJsonFile()
 	print(jsonText)
-	return jsonify(
+	jsonFile = jsonify(
         lyrics=jsonText
     )
+	return make_response(jsonFile,200)

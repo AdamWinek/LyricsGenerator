@@ -9,5 +9,5 @@ function sendRequest(){
     console.log(data);
     
   });
-  console.log(data)
+  document.getElementById("buttonResponse").textContent = "data";
 }
