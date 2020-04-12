@@ -108,7 +108,7 @@
                       placeholder="Your Lyric"
                     />
                     <div class="input-group-append">
-                      <button class="btn cta px-5 py-2" onclick="sendRequest()" >
+                      <button class="btn cta px-5 py-2" id="button" >
                         <i class="fas fa-check"></i>
                       </button>
                     </div>
@@ -117,11 +117,7 @@
                 <p id="buttonResponse"></p>
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1">Output:</label>
-                  <textarea
-                    class="form-control"
-                    id="exampleFormControlTextarea1"
-                    rows="20"
-                  ></textarea>
+                  <p id=returnText> </p>
                 </div>
               </div>
             </div>
