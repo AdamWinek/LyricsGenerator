@@ -15,7 +15,7 @@ function sendRequest(e){
     document.getElementById("returnText").textContent = "";
     lyricsText = data["lyrics"];
     console.log(lyricsText)
-    document.getElementById("returnText").textContent += lyricsText;
+    document.getElementById("exampleFormControlTextarea1").innerHTML =  lyricsText;
     
   });
   
