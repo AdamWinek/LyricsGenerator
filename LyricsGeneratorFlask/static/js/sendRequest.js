@@ -1,7 +1,7 @@
 
 window.onload=function(){
   document.getElementById("button").addEventListener("click", sendRequest)
-
+ 
 }
 
 function sendRequest(e){
