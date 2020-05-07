@@ -3,11 +3,31 @@ import string
 def load_doc(doc):
     #open file and convert to text
     file = open(doc, 'r')
+
     text = file.read()
     return text
 
 def clean_doc(text):
-    # replace '--' with a space ' '
+
+
+    #get rid of repeated lines
+    lines = text.splitlines()
+     
+    repeat_count = 0
+    for i in range(len(lines)- 1):
+        if lines[i] == lines[i + 1]:
+            repeat_count += 1
+    print(repeat_count)
+    
+    for i in range(len(lines) - repeat_count):
+        if lines[i] == lines[i + 1]:
+            lines.pop(i + 1)
+        lines[i] = lines[i] + " newline"
+
+    text = "\n".join(lines[1:])
+    
+
+
     text = text.replace("-", " ")
     # delete apostophes
     text = text.replace("'", "")
