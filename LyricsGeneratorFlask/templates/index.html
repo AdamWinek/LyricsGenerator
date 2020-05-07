@@ -19,6 +19,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/static/index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
     <script src="/static/js/sendRequest.js"></script>
@@ -106,10 +107,12 @@
                       type="text"
                       class="form-control"
                       placeholder="Your Lyric"
+                      id="lyricsInput"
                     />
                     <div class="input-group-append">
                       <button class="btn cta px-5 py-2" id="button" >
-                        <i class="fas fa-check"></i>
+                        <i class="fas fa-check" id="check"></i>
+                        <i class="fa fa-circle-o-notch fa-spin" id="loading"></i>
                       </button>
                     </div>
                   </div>

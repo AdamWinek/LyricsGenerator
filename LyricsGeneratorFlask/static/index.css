@@ -17,6 +17,15 @@ section {
   opacity: 0;
   transform: translateY(100px);
 }
+#loading{
+  visibility: hidden;
+}
+.hidden{
+  visibility: hidden;
+}
+.visible{
+  visibility: visible !important;
+}
 :root {
   --lato: "Lato";
   --sans: "Open Sans";
@@ -231,7 +240,16 @@ footer {
 footer .column a {
   padding-right: 1em;
 }
+#returnText{
+  border-style: solid;
+  border-width: thin;
+  border-color: #ced4da;
+  height: 600px;
+  color: #495057;
+  font-weight: 400;
 
+  font: lato;
+}
 @media (max-width: 1200px) {
   header .row .col-md-5 img {
     padding: 27vmin 1vmin;
@@ -246,6 +264,7 @@ footer .column a {
     height: 16rem;
     padding-top: 10vmin;
   }
+
 }
 @media (max-width: 768px) {
   header .row .col-md-7 {

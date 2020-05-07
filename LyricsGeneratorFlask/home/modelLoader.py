@@ -2,6 +2,7 @@ from random import randint
 from pickle import load
 from keras.models import load_model
 from keras.preprocessing.sequence import pad_sequences
+import string
 
 import json
 
@@ -34,7 +35,7 @@ def generate_seq(model, tokenizer, seq_length, seed_text, n_words):
 	return ' '.join(result)
 
 
-def getJsonFile():
+def getJsonFile( userLyrics):
 	in_file = "LyricsGeneratorFlask/home/lyrics_sequences.txt"
 	doc = load_doc(in_file)
 	lines = doc.split('\n')
@@ -46,13 +47,23 @@ def getJsonFile():
 	# load the tokenizer
 	tokenizer = load(open('LyricsGeneratorFlask/home/tokenizer.pkl', 'rb'))
 
+
+	#take user input and make sure it is valid
+	#remove words if it is too long
 	#seed text
-	#seed_text = "I dont like my math teacher he sucks ass"
-	seed_text = lines[randint(0,len(lines))]
+	seed_text = userLyrics
+	#changes the string so it will work with the model
+	seed_text = seed_text.lower()
+
+	#remove punctuation
+	seed_text = seed_text.translate(str.maketrans('', '', string.punctuation))
+
+	#seed_text = lines[randint(0,len(lines))]
 	print(seed_text + '\n')
 
 	# generate new text
-	generated = generate_seq(model, tokenizer, seq_length, seed_text, 100)
+	generated = seed_text + '\n' + generate_seq(model, tokenizer, seq_length, seed_text, 100)
+	
 	print(generated)
 	# data = {
     # "returnInfo": generated
@@ -61,7 +72,7 @@ def getJsonFile():
 	# with open("/users/adamwinek/LyricsGenerator/lyrics.json", "w") as write_file:
 	# 	(json.dump(data, write_file))
 	# return write_file
-getJsonFile()
+getJsonFile("dont like my math teacher he sucks ass")
 
 
  

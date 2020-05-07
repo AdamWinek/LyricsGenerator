@@ -1,5 +1,5 @@
 
-from flask import Blueprint, jsonify, make_response, render_template
+from flask import Blueprint, jsonify, make_response, render_template, request
 
 from home.modelLoader import getJsonFile
 
@@ -10,7 +10,10 @@ def display_home_page():
 
 @home_view.route('/generate') #route for lyrics generation
 def generate():	
-	jsonText = getJsonFile()
+	headers = request.headers
+	userLyrics = headers.get('Input')
+	print(userLyrics)
+	jsonText = getJsonFile(userLyrics)
 	print(jsonText)
 	jsonFile = jsonify(
         lyrics=jsonText
