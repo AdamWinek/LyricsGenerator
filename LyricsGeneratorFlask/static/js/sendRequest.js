@@ -10,8 +10,8 @@ function sendRequest(e){
   var inputText = document.getElementById("lyricsInput").value;
   var check = document.getElementById("check")
   var loading = document.getElementById("loading")
-  check.classList.add("hidden")
-  loading.classList.add("visible")
+  check.style.display = "none"
+  loading.style.display = "block"
   console.log(inputText);
   const myHeaders = new Headers({'Input': inputText});
   const myRequest = new Request('/generate', {
@@ -27,12 +27,13 @@ function sendRequest(e){
   .then((data) => {
     document.getElementById("returnText").textContent = "";
     lyricsText = data["lyrics"];
+    lyricsText = lyricsText.split("newline").join("<br/>")
     console.log(lyricsText)
-    document.getElementById("returnText").textContent += lyricsText;
+    document.getElementById("returnText").innerHTML += lyricsText;
     
   });
-  check.classList.remove("hidden")
-  loading.classList.remove("visible")
+  check.style.display = "block !important"
+  loading.style.display = "none !important"
   
   
 }

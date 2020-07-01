@@ -19,12 +19,7 @@ section {
 }
 #loading{
   visibility: hidden;
-}
-.hidden{
-  visibility: hidden;
-}
-.visible{
-  visibility: visible !important;
+
 }
 :root {
   --lato: "Lato";

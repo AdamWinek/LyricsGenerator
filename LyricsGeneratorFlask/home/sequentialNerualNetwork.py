@@ -1,4 +1,4 @@
-from .cleanText import load_doc
+from cleanText import load_doc
 import numpy as np
 from pickle import dump
 from keras.preprocessing.text import Tokenizer

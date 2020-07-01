@@ -63,6 +63,7 @@ def getJsonFile( userLyrics):
 
 	# generate new text
 	generated = seed_text + '\n' + generate_seq(model, tokenizer, seq_length, seed_text, 100)
+
 	
 	print(generated)
 	# data = {
