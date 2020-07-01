@@ -43,9 +43,9 @@ def getJsonFile( userLyrics):
 	seq_length = len(lines[0].split()) - 1
 
 	#load model 
-	model = load_model('LyricsGeneratorFlask/home/model.h5')
+	model = load_model('home/model.h5')
 	# load the tokenizer
-	tokenizer = load(open('LyricsGeneratorFlask/home/tokenizer.pkl', 'rb'))
+	tokenizer = load(open('home/tokenizer.pkl', 'rb'))
 
 
 	#take user input and make sure it is valid
