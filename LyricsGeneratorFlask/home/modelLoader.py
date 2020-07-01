@@ -36,7 +36,7 @@ def generate_seq(model, tokenizer, seq_length, seed_text, n_words):
 
 
 def getJsonFile( userLyrics):
-	in_file = "LyricsGeneratorFlask/home/lyrics_sequences.txt"
+	in_file = "home/lyrics_sequences.txt"
 	doc = load_doc(in_file)
 	lines = doc.split('\n')
 
